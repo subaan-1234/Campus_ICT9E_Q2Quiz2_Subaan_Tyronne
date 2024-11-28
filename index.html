@@ -3,104 +3,83 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cyrypto</title>
+    <title>Robotics Club Form</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         /* Global Styles */
         body {
             font-family: 'Press Start 2P', cursive; /* Retro font */
             margin: 0;
             padding: 0;
-            background-color: #000000; /* Black background */
-            color: #00FF0;
+            background-color: #00008B; /* Dark Blue background */
+            color: #00FF00; /* Neon Green */
         }
 
         /* Header Styles */
         header {
-            background-color: #1a1a1a; 
+            background-color: #1a1a1a;
             padding: 20px;
             text-align: center;
-            border-bottom: 5px solid #FF00FF; 
+            border-bottom: 5px solid #FF00FF; /* Pink border */
         }
 
         h1 {
             font-size: 2.5em;
             text-transform: uppercase;
-            color :#39FF14; /* Neon Green */
+            color: #39FF14; /* Neon Green */
         }
 
-        nav a {
-            color: #00FF00; 
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #FF00FF; 
-        }
-
-        /* Container Styles */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 21px;
-        }
-
-        /* Section Titles */
-        h2 {
+        h2, h3 {
+            font-size: 1.5em;
+            color: #FF00FF; /* Bright pink */
             text-align: center;
             margin-bottom: 20px;
-            color: #FF00FF; /* Bright pink */
-            color :#39FF14; /* Neon Green */
         }
 
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        /* Product Card Styles */
-        .product {
-            background-color: #222222; /* Dark card background */
-            border: 5px solid #00FF00; /* Neon green border */
-            border-radius: 10px;
+        /* Form Styles */
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #1a1a1a;
             padding: 20px;
-            text-align: center;
-            transition: transform 0.3s;
-            color :#39FF14; /* Neon Green */
+            border-radius: 10px;
         }
 
-        .product:hover {
-            transform: scale(1.05); /* Slight scaling effect on hover */
+        label {
+            font-size: 1.2em;
+            color: #FFFFFF;
+            display: block;
+            margin-bottom: 8px;
         }
 
-        .product img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #FF00FF;
+            border-radius: 5px;
+            font-size: 1.2em;
+            background-color: #222222;
+            color: #FFFFFF;
         }
 
-        /* Price Styles */
-        .price {
-            font-size: 1.4em;
-            color: #FF00FF; /* Bright pink */
-            margin: 10px 0;
+        input[type="radio"] {
+            margin-right: 10px;
         }
 
-        /* Button Styles */
         button {
-            background-color: #00FF00;
-            color: black;
+            background-color: #39FF14; /* Neon Green */
+            color: #000;
+            font-size: 1.2em;
+            padding: 10px 20px;
             border: none;
-            padding: 12px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
             transition: background-color 0.3s;
         }
 
@@ -117,92 +96,75 @@
             margin-top: 20px;
         }
 
-        /* Image Styling */
+        /* Navigation Styles */
+        nav {
+            background-color: #333;
+            padding: 15px 0;
+        }
+
+        nav a {
+            color: #39FF14;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            background-color: #FF00FF;
+            border-radius: 5px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        /* Centering the image */
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
         img {
-            height: 200px;
-            width: 250px;
-            border-radius: 8px;
-        }
-
-        /* Align Images to Left of Each Row */
-        .table td {
-            vertical-align: middle;
-        }
-
-        /* Custom Styles for the Image */
-        .image-cell {
-            width: 25%; /* Make image cell a smaller portion */
-            padding: 10px;
-        }
-
-        .image-cell img {
-            width: 100%; /* Full width of its container */
+            max-width: 100%;
             height: auto;
-        }
-
-        .text-cell {
-            width: 75%; /* Remaining space for text */
-        }
-
-        /* Custom Row Layout */
-        .table-row {
-            display: flex;
-            align-items: center;
-        }
-
-        .table-row .image-cell {
-            padding: 0;
-        }
-
-        .table-row .text-cell {
-            padding-left: 20px; /* Space between image and text */
-        }
-    </style>
-        <style type="text/css">
-        img {
-            height: 200px;
-            width: 250px;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="text-center mb-4">Bitcoin</h1>
-                <table class="table table-bordered">
-                    <thead class="table-warning">
-                        <tr>
-                            <th class="text-center">Details</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Row for Joy -->
-                        <tr class="table-danger table-row">
-                            <td class="text-cell">Bitcoin</td>
-                            <td class="image-cell">
-                                <img src="https://freepngdesign.com/content/uploads/images/bitcoin-logo-5234.png" alt=>
-                            </td>
-                        </tr>
-                        <!-- Row for Sadness -->
-                        <tr class="table-danger table-row">
-                            <td class="text-cell">Ethereum</td>
-                            <td class="image-cell">
-                                <img src="https://th.bing.com/th/id/OIP.Lq7thawo-rrIb9gV7fIZOwHaHx?rs=1&pid=ImgDetMain">
-                            </td>
-                        </tr>
-                        <!-- Row for Anger -->
-                        <tr class="table-danger table-row">
-                            <td class="text-cell">Tether</td>
-                            <td class="image-cell">
-                                <img src="https://img.freepik.com/premium-psd/tether-coin-logo-cryptocurrency-high-resolution-3d-render-transparant_513203-250.jpg?w=2000">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://static.vecteezy.com/system/resources/previews/004/269/052/original/cute-robot-logo-vector.jpg">Logo</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="page1.html">Page 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page2.html">Page 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page3.html">Page 3</a>
+                    </li>
+                </ul>
+                <!-- Add a search bar -->
+                <form class="d-flex">
+                    <input class="form-control" type="text" placeholder="Search...">
+                    <button class="btn btn-success" type="button">Search</button>
+                </form>
             </div>
         </div>
+    </nav>
+
+    <!-- Image Section -->
+    <div class="image-container">
+        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/292a75c3-abb5-4390-a2a8-4fc16eca629c/daw2ntn-4d687404-b0b3-4ab6-9eab-f5c5884bffa2.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI5MmE3NWMzLWFiYjUtNDM5MC1hMmE4LTRmYzE2ZWNhNjI5Y1wvZGF3Mm50bi00ZDY4NzQwNC1iMGIzLTRhYjYtOWVhYi1mNWM1ODg0YmZmYTIuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.taL655HET4A97jULtAIRlS_7y0I4IL9aw35tF7AOLb0" alt="Robotic Image">
     </div>
+
+
+
 </body>
 </html>
-  
